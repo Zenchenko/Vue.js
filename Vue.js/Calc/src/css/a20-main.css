@@ -1,0 +1,170 @@
+* {
+	font-family: 'Roboto', cursive;
+	margin: 0;
+	padding: 0; 
+}
+
+a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.7); 
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+p {
+    text-indent: 20px; 
+   } 
+
+   /*         df          */
+
+.df {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.center {
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.column {
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+
+.red {
+	border: 1px solid red;
+}
+
+
+ 
+p {
+	font-size: calc(16px + (18 - 16) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1em + (1.2 - 1) * ((100vw - 21em) / (35 - 21)));
+	}
+
+.h1,
+h1 {
+	font-size: calc(36px + (48 - 36) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1.3em + (1.4 - 1.3) * ((100vw - 21em) / (35 - 21)));
+	}
+
+.h2,
+h2 {
+	font-size: calc(28px + (38 - 28) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1.3em + (1.3 - 1.3) * ((100vw - 21em) / (35 - 21)));
+	}
+
+.h3,
+h3 {
+	font-size: calc(22px + (28 - 22) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1em + (1.2 - 1) * ((100vw - 21em) / (35 - 21)));
+	}
+
+.h4,
+h4 {
+	font-size: calc(16px + (22 - 16) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1em + (1.1 - 1) * ((100vw - 21em) / (35 - 21)));
+	}
+
+.h5,
+h5 {
+	font-size: calc(14px + (16 - 14) * (100vw - 400px) / (1280 - 400));
+	line-height: calc(1em + (1.1 - 1) * ((100vw - 21em) / (35 - 21)));
+	}
+
+/*--- ---*/
+
+.conteiner {
+	width: 100%;
+	padding: 15px;
+	overflow-x: hidden;
+}
+
+.sample {
+	max-width: 100%;
+	width: 1280px;
+	min-height: 100vh;
+	margin: 0 auto;
+}
+
+.sample h2 {
+	margin: 15px 30px;
+}
+
+.btn-add { 
+	width: 200px;
+	height: 40px; 
+	margin-left: 30px;
+} 
+
+.btn-delete {
+	width: 40px;
+	height: 40px; 
+}
+
+.row-pirog {  
+	width: auto;  
+	margin: 0 30px;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+} 
+
+.bloc-pirog { 
+	width: 100%;
+	margin: 15px 0;
+	flex: 1 0 300px;
+}
+
+.bloc-prise {
+	width: auto;
+	margin: 30px;
+}
+
+
+/*******  sloi  ********/
+.cake {
+	height: 100%;
+	height: auto;
+	flex: 0 0 350px;
+}
+.layer {
+	transition: height 0.5s;
+}
+
+.layer-biscuit {
+	background: #FFFF99;
+}
+
+.layer-beze {
+	background: #FFCCFF;
+}
+
+.layer-curd {
+	background: #CC6600;
+}
+
+.price {
+	font-size: 26px;
+	margin-right: 40px;
+}
+
+.lauer-enter-actuve {
+	animation: layerIn 0.5s;
+}

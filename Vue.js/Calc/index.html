@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Михаил Зенченко  - верстка HTML и CSS + програмирование JS">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Пригласите в команду">
+    <meta property="og:site_name" content="Портфолио Webmaster">        
+    <title>-Z-</title>      
+
+    <link href="dist/css/style.css" rel="stylesheet"> 
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/> 
+ 
+
+</head>
+
+<body  class="main">
+
+    <div class="conteiner">
+        <div class="sample column df">
+            <h2>Cake builder</h2>
+            <hr>
+            <button type="button" 
+                    class="btn btn-add btn-primary" 
+                    data-v-on_click="addLayer"
+                    >
+                Add layer
+            </button>
+            <hr v-show="hasLayers">
+            <div class="row-pirog center df">
+                <div class="bloc-pirog center df">
+                    <div class="col col-cm-6">
+                        <div class="cake column df">
+                            <div class="layer df"
+                                 data-v-bind_class="'layer-' + layer.type"
+                                 data-v-bind_style="{height: layer.height * 10 + 'px'}"  
+                                 data-v-for="(layer, i) in layers"
+                                 data-v-on_click="changeHeight(i, 1)" 
+                                 data-v-on_contextmenu.prevent="changeHeight(i -1)"> <!-- убирает всплывающее меню -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-cm-6 center bloc-table">
+                    <table class="table table-bordered table" 
+                           data-v-show="hasLayers">
+                        <tr>
+                            <th>Type</th>
+                            <th>Height</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr v-for="(layer, i) in layers">
+                            <td>
+                                <select  class="form-control" v-model="layers[i].type">
+                                    <option data-v-bind_value="key" 
+                                            data-v-for="(lt, key) in layersTypes"
+                                            >
+                                        {{ lt.ladel }}
+                                    </option>
+                                </select>
+                            </td>
+                            <td>
+                                <input  type="text" 
+                                        class="form-control"
+                                        data-v-model.number="layers[i].height">
+                            </td>
+                            <td class="center df">
+                                <button type="button" 
+                                        class="btn btn-delete btn-danger" @click="deleteLayer(i)"
+                                        >
+                                    -
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr data-v-show="hasLayers">
+            <div class="alert alert-success price bloc-prise df" 
+                 data-v-show="hasLayers">
+                <span class="price center df">
+                {{ price }}
+                руб.
+                </span>
+                <button type="button" 
+                        class="btn btn-warning">
+                    Order now
+                </button>
+            </div>
+        </div>        
+    </div>
+    
+    
+     
+
+
+<!-- script -->
+    
+    <script src="dist/js/vue.js"></script>
+    
+    <script src="dist/js/simple.js"></script>
+     
+    <script src="dist/js/js.js"></script>
+
+
+<!-- ! -->
+
+</body>
+</html>
